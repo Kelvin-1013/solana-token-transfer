@@ -24,6 +24,7 @@ pub mod my_token_program {
 }
 
 #[derive(Accounts)]
+#[instruction(token_amount: u64)]
 pub struct TransferToken<'info> {
 
     #[account(mut)]
