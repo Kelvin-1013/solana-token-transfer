@@ -15,19 +15,19 @@ pub mod my_token_program {
     use super::*;
     pub fn transfer_token(ctx: Context<TransferToken>, amount: u64) -> Result<()> {
 
-        token::transfer(
-            CpiContext::new_with_signer(
-                ctx.accounts.token_program.to_account_info(),
-                token::Transfer {
-                    from: ctx.accounts.from.to_account_info(),
-                    to: ctx.accounts.to.to_account_info(),
-                    authority: ctx.accounts.authority.to_account_info(),
-                },   
-            ),
-            amount,
-        )?;
-        }
-
+            token::transfer(
+                CpiContext::new(
+                    ctx.accounts.token_program.to_account_info(),
+                    token::Transfer {
+                        from: ctx.accounts.from.to_account_info(),
+                        to: ctx.accounts.to.to_account_info(),
+                        authority: ctx.accounts.authority.to_account_info(),
+                    },
+                ),
+                amount,
+            )?;
+            Ok(())
+    }
 }
 
 #[derive(Accounts)]
