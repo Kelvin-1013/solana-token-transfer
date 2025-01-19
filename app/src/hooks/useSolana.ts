@@ -28,7 +28,7 @@ export interface PresaleInfo {
   isInitialized: boolean;
 }
 
-const usePresale = () => {
+const useSolana = () => {
   const [decimals, setDecimals] = useState<number>(6);
   const wallet = useWallet();
   const router = useRouter();
