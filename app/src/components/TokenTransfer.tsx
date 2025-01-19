@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import useSolana from '../hooks/useSolana';
 import Head from 'next/head';
 import axios from 'axios';
-import { Notification } from 'notification';
+import { Notification } from './Notification';
 
 interface NotificationProps {
     message: string | React.ReactNode;
@@ -51,7 +51,11 @@ export default function TokenTransfer() {
         getCurrentPresaleFromDB,
         fetchPresaleInfoFromDB,
         presaleIdentifier
-    } = usePresale();
+    } = useSolana();
+
+    const setManualTokenAmount = (e) => {
+        setTokenAmount(e.target.value);
+    }
 
     const [solAmount, setSolAmount] = useState(0);
     const [tokenAmount, setTokenAmount] = useState(0);

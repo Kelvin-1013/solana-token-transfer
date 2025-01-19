@@ -5,7 +5,7 @@ import { useWallet } from '@solana/wallet-adapter-react';
 import { Connection, PublicKey, SystemProgram, LAMPORTS_PER_SOL } from '@solana/web3.js';
 import { Program, AnchorProvider, web3, utils, BN } from '@project-serum/anchor';
 import { IDL, TokenPresale } from '../interfaces/token_presale';
-import { PRESALE_PROGRAM_PUBKEY, TMONK_MINT_ADDRESS } from '../constants';
+import { TOKEN_TRANSFER_PROGRAM_PUBKEY, TMONK_MINT_ADDRESS } from './constants';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-hot-toast';
