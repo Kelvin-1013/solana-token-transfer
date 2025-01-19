@@ -1,12 +1,5 @@
 use anchor_lang::prelude::*;
-///
-/// 
-/// 
 use anchor_spl::{associated_token, token};
-// use crate::state::{PresaleInfo, BuyerAccount};
-// use crate::constants::{PRESALE_SEED, PRESALE_VAULT};
-// use crate::errors::PresaleError;
-
 
 declare_id!("ALQEfQjpxyXa7xnvakAFf7FmhvJH5xMz3hznMGK7iKXP");
 
@@ -31,7 +24,7 @@ pub mod my_token_program {
 }
 
 #[derive(Accounts)]
-pub struct TransferToken<'info> {      
+pub struct TransferToken<'info> {
 
     #[account(mut)]
     pub token_mint: Account<'info, token::Mint>,
